@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANOMALIVERSE</title>
-
+<script>
+function toggleMenu(){
+    document.getElementById("nav-menu").classList.toggle("active");
+}
+</script>
 <style>
 body{
     margin:0;
@@ -197,6 +201,69 @@ footer{
     text-align:center;
     padding:20px;
     font-size:14px;
+    
+}
+    /* NAVBAR */
+.navbar{
+    background:#111;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#00f2ff;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00f2ff;
+}
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:white;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+    nav{
+        display:none;
+        flex-direction:column;
+        background:#000;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:200px;
+        padding:20px;
+        border-radius:10px 0 0 10px;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
 }
 </style>
 </head>
@@ -205,15 +272,20 @@ footer{
 
 <header>ANOMALIVERSE</header>
 
-<nav>
-    <a href="#home">HOME</a>
-    <a href="#robux">STORE</a>
-    <a href="#komunitas">ROBLOX</a>
-    <a href="#discord">DISCORD</a>
-    <a href="#support">SOCIABUZZ</a>
-    <a href="#album">ALBUM</a>
-</nav>
+<div class="navbar">
+    <div class="logo">ANOMALIVERSE</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav-menu">
+        <a href="#home">HOME</a>
+        <a href="#robux">STORE</a>
+        <a href="#komunitas">ROBLOX</a>
+        <a href="#discord">DISCORD</a>
+        <a href="#support">SOCIABUZZ</a>
+        <a href="#album">ALBUM</a>
+    </nav>
+</div>
 
+    
 <div class="hero">
     <div class="hero-text">
         <h1>WELCOME TO ANOMALIVERSE</h1>
